@@ -1,0 +1,104 @@
+[
+    {
+        "label": "My Custom Field text",
+        "id": "my_custom_field",
+        "type": "text",
+        "default": ""
+    },
+    {
+        "label": "My Custom Field textarea",
+        "id": "my_custom_field2",
+        "type": "textarea",
+        "default": ""
+    },
+    {
+        "label": "My Custom Field wysiwyg",
+        "id": "my_custom_field3",
+        "type": "wysiwyg",
+        "default": ""
+    },
+    {
+        "label": "My Custom Field checkbox",
+        "id": "my_custom_field4",
+        "type": "checkbox",
+        "default": "0"
+    },
+    {
+        "label": "My Custom Field radio",
+        "id": "my_custom_field5",
+        "type": "radio",
+        "options": [
+            "option1",
+            "option2"
+        ]
+    },
+    {
+        "label": "My Custom Field select",
+        "id": "my_custom_field6",
+        "type": "select",
+        "options": [
+            "option1",
+            "option2"
+        ]
+    },
+    {
+        "label": "My Custom Field media",
+        "id": "my_custom_field7",
+        "type": "media",
+        "returnvalue": "URL"
+    },
+    {
+        "label": "My Custom Field categories",
+        "id": "my_custom_field8",
+        "type": "categories",
+        "default": ""
+    },
+    {
+        "label": "My Custom Field users",
+        "id": "my_custom_field9",
+        "type": "users",
+        "default": ""
+    },
+    {
+        "label": "My Custom Field email",
+        "id": "my_custom_field10",
+        "type": "email",
+        "default": ""
+    },
+    {
+        "label": "My Custom Field url",
+        "id": "my_custom_field11",
+        "type": "url",
+        "default": ""
+    },
+    {
+        "label": "My Custom Field password",
+        "id": "my_custom_field12",
+        "type": "password",
+        "default": ""
+    },
+    {
+        "label": "My Custom Field number",
+        "id": "my_custom_field13",
+        "type": "number",
+        "default": ""
+    },
+    {
+        "label": "My Custom Field color",
+        "id": "my_custom_field14",
+        "type": "color",
+        "default": ""
+    },
+    {
+        "label": "My Custom Field tel",
+        "id": "my_custom_field15",
+        "type": "tel",
+        "default": ""
+    },
+    {
+        "label": "My Custom Field date",
+        "id": "my_custom_field16",
+        "type": "date",
+        "default": ""
+    }
+]

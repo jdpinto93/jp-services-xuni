@@ -1,0 +1,11 @@
+{
+    "file_paths": [
+        "/inc/optimizer.php",
+        "/Parts/PostTypes/menu.php",
+        "/Parts/Taxonomies/promociones-menu.php",
+        "/Parts/Taxonomies/tipo-menu.php",
+        "/Parts/Metaboxes/Utilities.php",
+        "/Parts/Metaboxes/datos-promociones.php",
+        "/Parts/Metaboxes/datos-tipo.php"
+    ]
+}

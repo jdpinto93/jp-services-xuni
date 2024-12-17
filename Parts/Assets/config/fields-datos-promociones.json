@@ -1,0 +1,20 @@
+[
+    {
+        "label": "Banner de la promoción",
+        "id": "jp_services_banner_de_la_promocion",
+        "type": "media",
+        "returnvalue": "URL"
+    },
+    {
+        "label": "Numero de personas",
+        "id": "jp_services_numero_de_personas",
+        "type": "text",
+        "default": ""
+    },
+    {
+        "label": "Horarios",
+        "id": "jp_services_horarios",
+        "type": "text",
+        "default": ""
+    }
+]
