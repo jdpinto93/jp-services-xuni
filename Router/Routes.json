@@ -6,6 +6,7 @@
         "/Parts/Taxonomies/tipo-menu.php",
         "/Parts/Metaboxes/Utilities.php",
         "/Parts/Metaboxes/datos-promociones.php",
-        "/Parts/Metaboxes/datos-tipo.php"
+        "/Parts/Metaboxes/datos-tipo.php",
+        "/Parts/Metaboxes/datos-product-cat.php"
     ]
 }

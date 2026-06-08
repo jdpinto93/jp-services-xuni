@@ -1,0 +1,8 @@
+[
+    {
+        "label": "Imagen de la categoría",
+        "id": "jp_services_product_cat_imagen",
+        "type": "media",
+        "returnvalue": "URL"
+    }
+]
