@@ -30,34 +30,53 @@ class Tipo
         $render_script = <<<HTML
             <script>
                 jQuery(document).ready(function($) {
-                    if (typeof wp.media !== 'undefined') {
-                        var _custom_media = true,
-                            _orig_send_attachment = wp.media.editor.send.attachment;
-                        $('.newtermmeta-media').click(function(e) {
-                            var send_attachment_bkp = wp.media.editor.send.attachment;
-                            var button = $(this);
-                            var id = button.attr('id').replace('_button', '');
-                            _custom_media = true;
-                            wp.media.editor.send.attachment = function(props, attachment) {
-                                if (_custom_media) {
-                                    $('input#' + id).val(attachment.id);
-                                    $('div#preview' + id).css('background-image', 'url(' + attachment.url + ')');
-                                } else {
-                                    return _orig_send_attachment.apply(this, [props, attachment]);
-                                };
-                            }
-                            wp.media.editor.open(button);
-                            return false;
-                        });
-                        $('.add_media').on('click', function() {
-                            _custom_media = false;
-                        });
-                        $('.remove-media').on('click', function() {
-                            var parent = $(this).parents('td');
-                            parent.find('input[type="text"]').val('');
-                            parent.find('div').css('background-image', 'url()');
-                        });
+                    if (window.jpServicesMediaBound) { return; }
+                    window.jpServicesMediaBound = true;
+
+                    if (typeof wp === 'undefined' || typeof wp.media === 'undefined') {
+                        return;
                     }
+
+                    $(document).on('click', '.newtermmeta-media', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        var fieldId = $(this).attr('id').replace('_button', '');
+
+                        var frame = wp.media({
+                            title: 'Seleccionar imagen',
+                            button: { text: 'Usar esta imagen' },
+                            multiple: false,
+                            library: { type: 'image' }
+                        });
+
+                        frame.on('select', function() {
+                            try {
+                                var state      = frame.state();
+                                var selection  = state ? state.get('selection') : null;
+                                var first      = selection ? selection.first() : null;
+                                if (!first) { frame.close(); return; }
+
+                                var attachment = first.toJSON();
+                                $('input#' + fieldId).val(attachment.id);
+                                $('div#preview' + fieldId).css(
+                                    'background-image', 'url(' + attachment.url + ')'
+                                );
+                            } catch (err) {
+                                console.warn('[jp-services] Error al seleccionar imagen:', err);
+                            } finally {
+                                frame.close();
+                            }
+                        });
+
+                        frame.open();
+                    });
+
+                    $(document).on('click', '.remove-media', function() {
+                        var parent = $(this).parents('td, .form-field');
+                        parent.find('input[type="text"]').val('');
+                        parent.find('div[id^="preview"]').css('background-image', 'url()');
+                    });
                 });
             </script>
         HTML;
