@@ -177,7 +177,7 @@ class ProductCat
                         $meta_value
                     );
             }
-            $output .= '<div class="form-field">' . $this->format_rows($label, $input) . '</div>';
+            $output .= '<div class="form-field">' . $label . '<br>' . $input . '</div>';
         }
         echo $output;
     }
@@ -272,7 +272,7 @@ class ProductCat
             }
             $output .= $this->format_rows($label, $input);
         }
-        echo '<div class="form-field">' . $output . '</div>';
+        echo '<table class="form-table"><tbody>' . $output . '</tbody></table>';
     }
 
     public function format_rows($label, $input)
